@@ -14,11 +14,11 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                message.setText(R.string.title_dashboard)
+                message.setText(R.string.title_receive)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                message.setText(R.string.title_notifications)
+                message.setText(R.string.title_send)
                 return@OnNavigationItemSelectedListener true
             }
         }

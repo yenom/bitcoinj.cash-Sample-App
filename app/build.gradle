@@ -14,7 +14,7 @@ android {
     }
     compileSdkVersion 27
     defaultConfig {
-        applicationId "yenom.tech.bitcoinjcashsample"
+        applicationId "tech.yenom.bitcoinjcashsample"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
@@ -53,5 +53,5 @@ dependencies {
 
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
 
-    implementation("org.slf4j:slf4j-android:1.7.25")
+    implementation("org.slf4j:slf4j-android:1.7.25") { exclude module: 'slf4j-api' }
 }

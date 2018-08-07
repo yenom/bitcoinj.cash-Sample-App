@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="yenom.tech.bitcoinjcashsample.presentation.send.SendViewModel" />
+            type="tech.yenom.bitcoinjcashsample.presentation.send.SendViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout

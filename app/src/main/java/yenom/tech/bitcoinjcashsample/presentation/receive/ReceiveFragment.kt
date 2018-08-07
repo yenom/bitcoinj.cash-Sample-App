@@ -35,7 +35,7 @@ class ReceiveFragment : Fragment(), Injectable {
             context?.let {
                 val clipboardManager = it.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                 clipboardManager.primaryClip = data
-                Toast.makeText(it, "Your address is copied", Toast.LENGTH_SHORT).show()
+                Toast.makeText(it, "Copied to clipboard", Toast.LENGTH_SHORT).show()
             }
         })
     }

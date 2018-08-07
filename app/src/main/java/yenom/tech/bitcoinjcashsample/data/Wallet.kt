@@ -30,6 +30,7 @@ class Wallet(
                     refreshTransactions()
                 }
 
+                // use unconfirmed transactions
                 kit.wallet().allowSpendingUnconfirmedTransactions()
             }
         }.apply {
@@ -48,17 +49,19 @@ class Wallet(
     fun send(address: String, value: Coin) {
         kit.wallet().sendCoins(
                 kit.peerGroup(),
-                CashAddressFactory.create().getFromFormattedAddress(NET_PARAMS, address),
+                CashAddressFactory.create().getFromFormattedAddress(NET_PARAMS, address), /* from cash address */
                 value,
                 true /* for BCH */
         )
     }
 
     private fun refreshBalance() {
+        // use unconfirmed transactions
         balance.onNext(kit.wallet().getBalance(org.bitcoinj.wallet.Wallet.BalanceType.ESTIMATED))
     }
 
     private fun refreshAddress() {
+        // legacy address to cash(new) address
         val addr = CashAddressFactory.create().getFromBase58(NET_PARAMS, kit.wallet().currentReceiveAddress().toBase58())
         address.onNext(addr)
     }
